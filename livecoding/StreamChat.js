@@ -15,7 +15,7 @@ const StreamChat = class {
 
         csrfLogin({
             username: 'wk222as@student.lnu.se',
-            password: "one4one2"
+            password: "******"
 
         }).then(function(result) {
             console.log('You are now logged in.');
