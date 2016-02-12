@@ -3,6 +3,7 @@
 const cheerio = require('cheerio');
 const request = require('request');
 const csrfLogin = require('csrf-login');
+const scrapeCred = require('../scrapecredentials');
 
 
 const StreamChat = class {
@@ -14,8 +15,8 @@ const StreamChat = class {
         console.log('Lets login to Livecoding! ...');
 
         csrfLogin({
-            username: 'wk222as@student.lnu.se',
-            password: "******"
+            username: scrapeCred.username,
+            password: scrapeCred.password
 
         }).then(function(result) {
             console.log('You are now logged in.');
