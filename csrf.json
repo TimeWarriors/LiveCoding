@@ -1,0 +1,8 @@
+{
+  "host": "https://www.livecoding.tv",
+  "loginFormSelector": "class='clearfix'",
+  "loginUsernameField": "login",
+  "loginPasswordField": "password",
+  "tokenFieldName": "csrfmiddlewaretoken",
+  "loginPath": "/accounts/login/"
+}

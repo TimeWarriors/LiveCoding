@@ -1,0 +1,16 @@
+{
+  "name": "LiveCodingScrape",
+  "version": "1.0.0",
+  "description": "Scrape livecoding.tv stream status and chat",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Wictor Kihlbaum",
+  "dependencies": {
+    "cheerio": "latest",
+    "csrf-login": "^1.11.0",
+    "express": "latest",
+    "request": "latest"
+  }
+}

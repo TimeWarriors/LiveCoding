@@ -1,0 +1,22 @@
+{
+  "hashTags": [
+    {
+      "tagName": "#fail", // Neither sound nor video are being streamed.
+      "priority": 1, // 1 is highest priority.
+      "isPosted": false,
+      "functionToCall": "?"
+    },
+    {
+      "tagName": "#sound", // Problem with the sound.
+      "priority": 2,
+      "isPosted": false,
+      "functionToCall": "?"
+    },
+    {
+      "tagName": "#video", // Problem with the video.
+      "priority": 2,
+      "isPosted": false,
+      "functionToCall": "?"
+    }
+  ]
+}
