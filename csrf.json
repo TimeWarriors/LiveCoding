@@ -4,5 +4,7 @@
   "loginUsernameField": "login",
   "loginPasswordField": "password",
   "tokenFieldName": "csrfmiddlewaretoken",
-  "loginPath": "/accounts/login/"
+  "loginPath": "/accounts/login/",
+  "username": "wk222as@student.lnu.se",
+  "password": "scrapepassword"
 }

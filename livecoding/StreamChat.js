@@ -2,8 +2,8 @@
 
 const cheerio = require('cheerio');
 const request = require('request');
-const csrfLogin = require('csrf-login');
-const scrapeCred = require('../scrapecredentials');
+const csrfLogin = require('csrf-login')
+const csrfConfig = require('../csrf');
 
 
 const StreamChat = class {
@@ -12,37 +12,37 @@ const StreamChat = class {
     }
 
     loginToLiveCoding() {
-        console.log('Lets login to Livecoding! ...');
+        console.log('Lets login to Livecoding.tv ...');
 
         csrfLogin({
-            username: scrapeCred.username,
-            password: scrapeCred.password
-
+            username: csrfConfig.username,
+            password: csrfConfig.password
         }).then(function(result) {
             console.log('You are now logged in.');
-            console.log(result.jar._jar.store.idx['livecoding.tv']['/']);
-
-            info.request('/chat/udm/', function (error, response, body) {
-
-                var $ = cheerio.load(body);
-                $('.message-pane').filter(function() {
-
-                    var data = $(this);
-                    console.log(data.children().first());
-                });
-
-            });
+            //console.log(result.jar._jar.store.idx['livecoding.tv']['/']);
+            return result;
 
         }).then(function(data) {
-           console.log(data);
+           //console.log(data);
+
+            data.request('/chat/udm/', function (error, response, body) {
+                var $ = cheerio.load(body);
+
+                $('.message-pane').filter(function() {
+                    var data = $(this);
+                    var messages = data.children();
+                    // TODO: Handle messages.
+                });
+            });
 
         }).catch(function (onError) {
             console.log('ERROR: ' + onError);
-        });
+
+        }).done();
     }
 
     getChatMessages() {
-        console.log('Lets check amount of messages!');
+        console.log('Lets check amount of messages ...');
         var chatURL = 'https://www.livecoding.tv/chat/udm';
 
         request(chatURL, function(error, response, html) {
